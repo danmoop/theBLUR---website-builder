@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document settings</title>
+    <link rel="stylesheet" href="../css/external/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/external/uikit.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/external/uikit.min.js"></script>
+    <script src="../js/external/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
+</head>
+<body>
+    <div class="text-center uk-position-center uk-animation-fade">
+        <input class="uk-input bl" placeholder="Type in webpage title" id="docTitle">
+        <button class="uk-button uk-button-primary" style="margin-top: 25px;" id="submitBtn">Submit</button>
+    </div>
+
+    <script>
+        const ipc = require('electron').ipcRenderer;
+
+        document.getElementById('submitBtn').addEventListener('click', function(){
+            ipc.send('docTitleChanged', document.getElementById('docTitle').value);
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title id="editorTitle">TheBLUR</title>
+    <link rel="stylesheet" href="../css/external/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/external/uikit.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/external/uikit.min.js"></script>
+    <script src="../js/external/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.7.5/beautify-html.js"></script>
+</head>
+<body>
+
+<div class="uk-button-group uk-animation-fade" style="z-index: 2; position:fixed;">
+    <div class="uk-inline">
+        <button class="uk-button uk-button-default md-blue menuBtn" type="button">File</button>
+        <div uk-dropdown>
+            <ul class="uk-nav uk-dropdown-nav">
+                <li class="uk-active b" id="openHome"><a href="#">Open / New project</a></li>
+                <hr>
+                <li class="uk-active" id="openDirectory"><a href="#">Open project directory</a></li>
+                <li class="uk-active" id="viewInBrow"><a href="#/">View in browser</a></li>
+                <li id="quitBtn"><a href="#">Quit</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="uk-inline">
+        <button class="uk-button uk-button-default md-blue menuBtn" type="button">Edit</button>
+        <div uk-dropdown>
+            <ul class="uk-nav uk-dropdown-nav">
+                <li class="uk-active" id="changeDocTitle"><a href="#">Set webpage title</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="uk-inline">
+        <button class="uk-button uk-button-default md-blue menuBtn" type="button">View</button>
+        <div uk-dropdown>
+            <ul class="uk-nav uk-dropdown-nav">
+                <li class="uk-active" onclick="location.reload();"><a href="#">Refresh page</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <button class="uk-button uk-button-default uk-margin-small-right md-blue menuBtn" type="button" id="toggler" uk-toggle="target: #offcanvas-reveal">Toggle sections</button>
+    <button class="uk-button uk-button-primary b" id="saveBtn">Save Changes</button>
+    <button class="uk-button uk-button-default bl" id="saved_notify" style="border: none;"><!-- Saved! --></button>
+
+    <button class="uk-button uk-button-danger wh" id="viewDesktop"><span uk-icon="desktop"></span></button> <!-- Desktop -->
+    <button class="uk-button uk-button-danger wh" id="viewTablet"><span uk-icon="tablet"></span></button> <!-- Tablet -->
+    <button class="uk-button uk-button-danger wh" id="viewPhone"><span uk-icon="phone"></span></button> <!-- Phone -->
+</div>
+
+<div id="offcanvas-reveal" uk-offcanvas="mode: reveal; overlay: true">
+    <div class="uk-offcanvas-bar">
+        <div class="uk-offcanvas-bar">
+            <button class="uk-offcanvas-close" type="button" uk-close></button>
+            <h3>Sections</h3>
+            <ul>
+                <p id="appendNavbarMenu">Navbars</p>
+                <p id="appendCoverMenu">Covers</p>
+                <p id="appendArticleMenu">Articles</p>
+                <p>Features</p>
+                <p>Social</p>
+                <p>Forms</p>
+                <p>Footers</p>
+                <p>Overlays <!-- <span class="uk-badge">Pro</span> --></p>
+                <p>Background animation</p>
+                <p>Full-Page content</p>
+                <p id="appendWebGL"<span style="color: #1abc9c" class="b">Web</span><span style="color: #e74c3c;" class="b">GL</span></p>
+                <p id="appendDivider">Divider</p>
+            </ul>  
+            <h3>Grid positioning</h3>
+            <ul>
+                <p>2 equal grids</p>
+                <p>3 equal grids</p>
+                <p>4 equal grids</p>
+                <p>1 | 2 | 1</p>
+                <p>2 | 3 | 2</p>
+            </ul>
+            <h3>Text</h3>
+            <ul>
+                <p>Header 1</p>
+                <p>Header 2</p>
+                <p>Header 3</p>
+                <p>Header 4</p>
+                <p>Header 5</p>
+                <p>Header 6</p>
+                <p>Paragraph</p>
+            </ul>
+            <h3>Images</h3>
+            <ul>
+                <p>Round image</p>
+                <p>Usual image</p>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div id="content" contenteditable="true">
+
+</div>
+
+<script>
+    require('./../js/sections/editor.js');
+</script>
+
+</body>
+</html>

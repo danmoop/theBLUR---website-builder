@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="grad">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/external/bootstrap.min.css">
+  <link rel="stylesheet" href="css/external/uikit.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/external/uikit.min.js"></script>
+
+  <title>TheBLUR</title>
+</head>
+<body>
+		
+	<div uk-sticky>
+		<a href="#/" id="exitBtn" uk-close class="uk-align-right uk-close-large" style="margin: 20px;"></a>
+	</div>
+
+	<div class="text-center uk-position-center uk-animation-fade">
+
+		<img src="img/bird.png" width="200">
+
+		<h1 class="wh">Welcome to <b>TheBLUR</b></h1>
+		<p class="wh b fz20">Create modern Bootstrap & WebGL websites for your team, company or yourself without coding!</p>
+			<div class="row">  
+				<div class="col-sm-6">
+					<button class="uk-button uk-button-default wh b border5 nohover" id="newProj">Start a new project</button>
+				</div>
+				<div class="col-sm-6">
+					<button class="uk-button uk-button-primary wh b border5" id="openProj">Open project</button>
+				</div>
+			</div>
+	</div>
+
+
+	<script>
+		require('./js/sections/index.js');
+	</script>
+
+</body>
+</html>
